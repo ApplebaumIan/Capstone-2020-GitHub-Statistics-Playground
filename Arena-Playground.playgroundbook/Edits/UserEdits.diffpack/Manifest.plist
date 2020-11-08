@@ -41,6 +41,12 @@
 				<key>File</key>
 				<string>UserModules/UserModule.playgroundmodule/Sources/BarChart-BarParentControl.swift</string>
 			</dict>
+			<dict>
+				<key>Diff</key>
+				<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift.delta</string>
+				<key>File</key>
+				<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+			</dict>
 		</array>
 		<key>Removed</key>
 		<array/>
