@@ -44,7 +44,7 @@ public struct RepositoryElement: Codable, Hashable {
 	public var gitUrl, sshUrl: String?
 	public var cloneUrl: String?
 	public var svnUrl: String?
-	public var homepage: JSONNull?
+//	public var homepage: JSONNull?
 	public var size, stargazersCount, watchersCount: Int?
 	public var language: String?
 	public var hasIssues, hasProjects, hasDownloads, hasWiki: Bool?
@@ -111,7 +111,7 @@ public struct RepositoryElement: Codable, Hashable {
 		case sshUrl
 		case cloneUrl
 		case svnUrl
-		case homepage, size
+		case size
 		case stargazersCount
 		case watchersCount
 		case language
@@ -131,7 +131,7 @@ public struct RepositoryElement: Codable, Hashable {
 		case permissions
 	}
 
-	public init(id: Int?, nodeId: String?, name: String?, fullName: String?, repositoryPrivate: Bool?, owner: Owner?, htmlUrl: String?, repositoryDescription: JSONNull?, fork: Bool?, url: String?, forksUrl: String?, keysUrl: String?, collaboratorsUrl: String?, teamsUrl: String?, hooksUrl: String?, issueEventsUrl: String?, eventsUrl: String?, assigneesUrl: String?, branchesUrl: String?, tagsUrl: String?, blobsUrl: String?, gitTagsUrl: String?, gitRefsUrl: String?, treesUrl: String?, statusesUrl: String?, languagesUrl: String?, stargazersUrl: String?, contributorsUrl: String?, subscribersUrl: String?, subscriptionUrl: String?, commitsUrl: String?, gitCommitsUrl: String?, commentsUrl: String?, issueCommentUrl: String?, contentsUrl: String?, compareUrl: String?, mergesUrl: String?, archiveUrl: String?, downloadsUrl: String?, issuesUrl: String?, pullsUrl: String?, milestonesUrl: String?, notificationsUrl: String?, labelsUrl: String?, releasesUrl: String?, deploymentsUrl: String?, createdAt: Date?, updatedAt: Date?, pushedAt: Date?, gitUrl: String?, sshUrl: String?, cloneUrl: String?, svnUrl: String?, homepage: JSONNull?, size: Int?, stargazersCount: Int?, watchersCount: Int?, language: String?, hasIssues: Bool?, hasProjects: Bool?, hasDownloads: Bool?, hasWiki: Bool?, hasPages: Bool?, forksCount: Int?, mirrorUrl: JSONNull?, archived: Bool?, disabled: Bool?, openIssuesCount: Int?, license: JSONNull?, forks: Int?, openIssues: Int?, watchers: Int?, defaultBranch: String?, permissions: Permissions?) {
+	public init(id: Int?, nodeId: String?, name: String?, fullName: String?, repositoryPrivate: Bool?, owner: Owner?, htmlUrl: String?, repositoryDescription: JSONNull?, fork: Bool?, url: String?, forksUrl: String?, keysUrl: String?, collaboratorsUrl: String?, teamsUrl: String?, hooksUrl: String?, issueEventsUrl: String?, eventsUrl: String?, assigneesUrl: String?, branchesUrl: String?, tagsUrl: String?, blobsUrl: String?, gitTagsUrl: String?, gitRefsUrl: String?, treesUrl: String?, statusesUrl: String?, languagesUrl: String?, stargazersUrl: String?, contributorsUrl: String?, subscribersUrl: String?, subscriptionUrl: String?, commitsUrl: String?, gitCommitsUrl: String?, commentsUrl: String?, issueCommentUrl: String?, contentsUrl: String?, compareUrl: String?, mergesUrl: String?, archiveUrl: String?, downloadsUrl: String?, issuesUrl: String?, pullsUrl: String?, milestonesUrl: String?, notificationsUrl: String?, labelsUrl: String?, releasesUrl: String?, deploymentsUrl: String?, createdAt: Date?, updatedAt: Date?, pushedAt: Date?, gitUrl: String?, sshUrl: String?, cloneUrl: String?, svnUrl: String?, size: Int?, stargazersCount: Int?, watchersCount: Int?, language: String?, hasIssues: Bool?, hasProjects: Bool?, hasDownloads: Bool?, hasWiki: Bool?, hasPages: Bool?, forksCount: Int?, mirrorUrl: JSONNull?, archived: Bool?, disabled: Bool?, openIssuesCount: Int?, license: JSONNull?, forks: Int?, openIssues: Int?, watchers: Int?, defaultBranch: String?, permissions: Permissions?) {
 		self.id = id
 		self.nodeId = nodeId
 		self.name = name
@@ -185,7 +185,7 @@ public struct RepositoryElement: Codable, Hashable {
 		self.sshUrl = sshUrl
 		self.cloneUrl = cloneUrl
 		self.svnUrl = svnUrl
-		self.homepage = homepage
+//		self.homepage = homepage
 		self.size = size
 		self.stargazersCount = stargazersCount
 		self.watchersCount = watchersCount
@@ -357,7 +357,7 @@ public extension RepositoryElement {
 			sshUrl: sshUrl ?? self.sshUrl,
 			cloneUrl: cloneUrl ?? self.cloneUrl,
 			svnUrl: svnUrl ?? self.svnUrl,
-			homepage: homepage ?? self.homepage,
+//			homepage: homepage ?? self.homepage,
 			size: size ?? self.size,
 			stargazersCount: stargazersCount ?? self.stargazersCount,
 			watchersCount: watchersCount ?? self.watchersCount,
