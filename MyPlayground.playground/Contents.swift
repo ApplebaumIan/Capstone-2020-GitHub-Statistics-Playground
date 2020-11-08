@@ -32,37 +32,37 @@ semaphore.wait()
 var checkMultiple: [Team:Int] = [:]
 
 
-//func getRepos(teams: Teams)-> [String]?{
-//
-//	for team in teams{
-//		var semaphore = DispatchSemaphore (value: 0)
-//
-//		var request = URLRequest(url: URL(string: "https://api.github.com/orgs/Capstone-Projects-2020-Fall/teams/\(team.slug!)/repos")!,timeoutInterval: Double.infinity)
-//		request.addValue("Basic QXBwbGViYXVtaWFuOlNhaWxpbmc0RnVuLg==", forHTTPHeaderField: "Authorization")
-//		request.addValue("_octo=GH1.1.424351895.1604093341; logged_in=no", forHTTPHeaderField: "Cookie")
-//
-//		request.httpMethod = "GET"
-//
-//		let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//		  guard let data = data else {
-//			print(String(describing: error))
-//			return
-//		  }
+func getRepos(teams: Teams)-> [String]?{
+
+	for team in teams{
+		var semaphore = DispatchSemaphore (value: 0)
+
+		var request = URLRequest(url: URL(string: "https://api.github.com/orgs/Capstone-Projects-2020-Fall/teams/\(team.slug!)/repos")!,timeoutInterval: Double.infinity)
+		request.addValue("Basic QXBwbGViYXVtaWFuOlNhaWxpbmc0RnVuLg==", forHTTPHeaderField: "Authorization")
+		request.addValue("_octo=GH1.1.424351895.1604093341; logged_in=no", forHTTPHeaderField: "Cookie")
+
+		request.httpMethod = "GET"
+
+		let task = URLSession.shared.dataTask(with: request) { data, response, error in
+		  guard let data = data else {
+			print(String(describing: error))
+			return
+		  }
 //		  print(String(data: data, encoding: .utf8)!)
-//			let repos: Repository = try! Repository(data: data)
-//
-////			checkMultiple[team] = repos.count
-//		  semaphore.signal()
-//		}
-//
-//		task.resume()
-//		semaphore.wait()
-//	}
-//	return nil
-//}
-//
-//getRepos(teams: capstone2020)
-//checkMultiple
+			let repos: Repository = try! Repository(data: data)
+			print(try! repos.jsonString() ?? "emp")
+//			checkMultiple[team] = repos.count
+		  semaphore.signal()
+		}
+
+		task.resume()
+		semaphore.wait()
+	}
+	return nil
+}
+
+getRepos(teams: capstone2020)
+checkMultiple
 class MyViewController : UIViewController {
 
 	override func loadView() {
@@ -91,6 +91,4 @@ class MyViewController : UIViewController {
 }
 // Present the view controller in the Live View window
 let Graphs = MyViewController()
-//Graphs.view.frame.size = CGSize(width: 375, height: 667)
-Graphs.preferredContentSize = CGSize(width: 600, height: 600)
 PlaygroundPage.current.liveView = Graphs
