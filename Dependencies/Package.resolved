@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "BarChartKit",
+        "repositoryURL": "https://github.com/marekpridal/BarChart.git",
+        "state": {
+          "branch": null,
+          "revision": "6dbd90189252b54c148fa01036131d021998ab41",
+          "version": "1.4.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
